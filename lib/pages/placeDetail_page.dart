@@ -66,8 +66,6 @@ class PlaceDetailState extends State<PlaceDetailPage> {
                   color: Colors.green,
                   height: 30.0,
                 ),
-                getCard("Address ", _place.formatted_address,Icons.location_on),
-                getCard("Working Hours ", _place.weekday_text.join("\n"),Icons.work),
               ],
             ),
           ),
@@ -79,12 +77,6 @@ class PlaceDetailState extends State<PlaceDetailPage> {
   @override
   void initState() {
     super.initState();
-
-    LocationService.get().getPlace(widget._place_id).then((data) {
-      setState(() {
-        _place = data;
-      });
-    });
   }
 
   getCard(String header, String content, IconData iconData) {
